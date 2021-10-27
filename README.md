@@ -1,4 +1,3 @@
-# spdv1.6-level1-algorithms
 # Mentoria DesenvolvendoMe v1.6 - Fase 1 -Algoritmos e Problemas
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/osksergio/spdv1.6-level1-algorithms?style=for-the-badge)
@@ -15,7 +14,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 * Você instalou o Ruby 3.0.2
 * Você possui uma máquina Windows / Linux / Mac.
 
-## 📫 Contribuindo para cursos-poo
+## 📫 Contribuindo para spdv1.6-level1-algorithms
 <!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
 Para contribuir com spdv1.6-level1-algorithms, siga estas etapas:
 
