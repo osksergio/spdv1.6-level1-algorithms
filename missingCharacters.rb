@@ -5,37 +5,36 @@ MAX_CHAR = 26
 # Returns characters that needs to be added to make str
 def missingChars(str)
 
-    # A boolean array to store characters
-    # present in string.
-    #present = [false for i in 0..MAX_CHAR]
-    presentArr = [false];
+  # A boolean array to store characters
+  # present in string.
+  #present = [false for i in 0..MAX_CHAR]
+  presentArr = [false];
     
-    for i in 0..(MAX_CHAR - 2) do
-      #presentArr[i] = false
-      presentArr.push(false)
+  for i in 0..(MAX_CHAR - 2) do
+    presentArr.push(false)
+  end
+
+  # Traverse string and mark characters present in string
+  for i in 0..(str.length() - 1) do
+    if (str[i] >= 'a' and str[i] <= 'z') then
+      presentArr[str[i].ord - 'a'.ord] = true
+    elsif (str[i] >= 'A' and str[i] <= 'Z') then
+      presentArr[str[i].ord - 'A'.ord] = true
     end
+  end
 
-    # Traverse string and mark characters present in string
-    for i in 0..(str.length() - 1) do
-      if (str[i] >= 'a' and str[i] <= 'z') then
-        presentArr[str[i].ord - 'a'.ord] = true
-      elsif (str[i] >= 'A' and str[i] <= 'Z') then
-        presentArr[str[i].ord - 'A'.ord] = true
-      end
+  # Store missing characters in alphabetic order.    
+  res = ""
+
+  for i in 0..(MAX_CHAR - 1) do
+    if (presentArr[i] == false) then
+      res += (i + 'a'.ord).to_s
     end
+  end
 
-    # Store missing characters in alphabetic order.    
-    res = ""
-
-    for i in 0..(MAX_CHAR - 1) do
-      if (presentArr[i] == false) then
-        res += (i + 'a'.ord).to_s
-      end
-    end
-
-    return res
+  return res
 end
 
 # Driver code
 str = "The quick brown fox jumps over the dog"
-puts (missingChars(str))
+puts missingChars(str)
