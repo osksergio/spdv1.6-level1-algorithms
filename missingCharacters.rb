@@ -26,9 +26,14 @@ def missingChars(str)
   # Store missing characters in alphabetic order.    
   res = ""
 
+  x = -1
   for i in 0..(MAX_CHAR - 1) do
     if (presentArr[i] == false) then
-      res += (i + 'a'.ord).to_s
+      x = (i + 'a'.ord)
+
+      if x != -1 then
+        res += x.chr
+      end
     end
   end
 
@@ -37,4 +42,5 @@ end
 
 # Driver code
 str = "The quick brown fox jumps over the dog"
+#str = "The quick brown fox jumps"
 puts missingChars(str)
