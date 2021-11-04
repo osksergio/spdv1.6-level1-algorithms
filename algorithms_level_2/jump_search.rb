@@ -6,7 +6,7 @@ def jumpSearch(arr, x , n)
   # Finding the block where element is
   # present (if it is present)
   prev = 0
-  while arr[int(min(step, n) - 1)] < x
+  while arr[([step, n].min) - 1] < x
     prev = step
     step += Math.sqrt(n)
     if prev >= n then
@@ -14,19 +14,17 @@ def jumpSearch(arr, x , n)
     end
   end
 
-  # Doing a linear search for x in
-  # block beginning with prev.
-  while arr[int(prev)] < x do
+  # Doing a linear search for x in block beginning with prev.
+  while arr[prev] < x
     prev += 1
 
-    # If we reached next block or end
-    # of array, element is not present.
-    if prev == min(step, n) then
+    # If we reached next block or end of array, element is not present.
+    if prev == [step, n].min then
       return -1
     end
 
     # If element is found
-    if arr[int(prev)] == x then
+    if arr[prev] == x then
       return prev
     end
   end
@@ -42,6 +40,4 @@ n = arr.length()
 index = jumpSearch(arr, x, n)
  
 # Print the index where 'x' is located
-print("Number" , x, "is at index" ,"%.0f"%index)
- 
-# This code is contributed by "Sharad_Bhardwaj".
+puts "Number #{x}, is at index #{index}"
